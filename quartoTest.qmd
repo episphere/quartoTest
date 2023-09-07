@@ -27,9 +27,15 @@ data = [{
   mode:"markers",
   text:penguins.sex
 }];
-layout = { 
-  title: "Penguin Data"
-};
+layout = ({ 
+  title: "Penguin Data",
+  xaxis: {
+    title: "Bill length (mm)"
+  },
+  yaxis: {
+    title: "Flipper length (mm)"
+  },
+})
 myPlot = DOM.element('div')
 plotly.newPlot(myPlot, data, layout);
 
