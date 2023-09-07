@@ -1,0 +1,37 @@
+---
+title: "quartoTest"
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+```{r}
+library(palmerpenguins)
+library(tidyverse)
+
+penguins |> ggplot(aes(bill_length_mm,flipper_length_mm)) + geom_point()
+ojs_define(penguins = penguins)
+```
+
+```{ojs}
+penguins
+```
+
+
+```{ojs}
+plotly=require("https://cdn.plot.ly/plotly-2.25.2.min.js")
+data = [{
+  x:penguins.bill_length_mm, 
+  y:penguins.flipper_length_mm, 
+  mode:"markers",
+  text:penguins.sex
+}];
+layout = { 
+  title: "Penguin Data"
+};
+myPlot = DOM.element('div')
+plotly.newPlot(myPlot, data, layout);
+
+```
+
