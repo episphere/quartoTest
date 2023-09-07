@@ -2,9 +2,9 @@
 title: "quartoTest"
 ---
 
-## Quarto
+## Get the data from R
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+Instead of using the iris dataset. Let's use the Penquin dataset available in the palmerpenquins package (you may need to install it.) **Notice** that you must call `ojs_define` with your data to make it avaiable for observablejs.
 
 ```{r}
 library(palmerpenguins)
@@ -14,11 +14,14 @@ penguins |> ggplot(aes(bill_length_mm,flipper_length_mm)) + geom_point()
 ojs_define(penguins = penguins)
 ```
 
+## Look at the data in obervablejs
+the penquins data is available in observalblejs
 ```{ojs}
 penguins
 ```
 
-
+### Remake the plot
+**Note:** if you want to create an ojs object, you must surround them with parenthesis.  Just an observable thing.
 ```{ojs}
 plotly=require("https://cdn.plot.ly/plotly-2.25.2.min.js")
 data = [{
@@ -38,6 +41,4 @@ layout = ({
 })
 myPlot = DOM.element('div')
 plotly.newPlot(myPlot, data, layout);
-
 ```
-
