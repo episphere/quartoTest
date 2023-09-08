@@ -4,7 +4,5 @@
 .Ruserdata
 
 /.quarto/
-quartoTest_files
 *.yml
 *.Rproj
-*.html
