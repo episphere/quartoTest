@@ -2,9 +2,11 @@
 title: "quartoTest"
 ---
 
+
 ## Get the data from R
 
 Instead of using the iris dataset. Let's use the Penquin dataset available in the palmerpenquins package (you may need to install it.) **Notice** that you must call `ojs_define` with your data to make it avaiable for observablejs.
+
 
 ```{r}
 library(palmerpenguins)
@@ -21,17 +23,21 @@ ojs_define(penguins = penguins)
 #pd.DataFrame(penguins_py)
 ```
 
+
 ## Look at the data in obervablejs
 
 the penquins data is available in observalblejs
+
 
 ```{ojs}
 penguins
 ```
 
+
 ### Remake the plot
 
 **Note:** if you want to create an ojs object, you must surround them with parenthesis. Just an observable thing.
+
 
 ```{ojs}
 plotly=require("https://cdn.plot.ly/plotly-2.25.2.min.js")
@@ -58,7 +64,6 @@ plotly.newPlot(myPlot, data, layout);
  
 ```
 
-
 ```{r}
 twoTimes <- function(x){
   2*x
@@ -69,3 +74,4 @@ twoTimes <- function(x){
 x=c(1,2,3,4)
 twoTimes(x)
 ```
+

@@ -6,3 +6,4 @@
 /.quarto/
 *.yml
 *.Rproj
+.DS_Store
